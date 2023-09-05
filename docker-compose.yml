@@ -35,8 +35,6 @@ services:
     environment:
       BOOTSTRAP_SERVERS: kafka:9092
       KAFKA_ENABLED: true
-      TEST: ${TEST}
-    command: agent -server -advertise ${TEST} -bootstrap
       
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
