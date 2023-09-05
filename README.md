@@ -3,11 +3,10 @@
 
 
 ## Get Started
-#### Project can be started with the following command
+Project can be started with the following command:
 ```
 docker-compose up -d
 ```
-#### It will launch four containers:
 
 Container Name  | Port
 -------------   | -------------
@@ -32,5 +31,5 @@ Kafka - UI      | 8090
     "uuid": "8e215f5d-47be-42a7-a2b1-541e9a708634"
   }
 ```
-#### Ready request available [here](https://github.com/revinsd/KafkaCamundaTest/blob/master/src/main/resources/send-message.http)
+Ready request available [here](https://github.com/revinsd/KafkaCamundaTest/blob/master/src/main/resources/send-message.http)
 
