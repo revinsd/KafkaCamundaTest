@@ -11,6 +11,8 @@ spring:
   h2:
     console:
       enabled: true
+      settings:
+        web-allow-others: true
 
 camunda:
   bpm:
@@ -29,4 +31,4 @@ logging:
   level:
     com.example.KafkaCamundaTest: debug
 server:
-  port: 8088
+  port: 8010

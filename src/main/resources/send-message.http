@@ -1,4 +1,4 @@
-POST http://localhost:8080/message/send/main
+POST http://localhost:8010/message/send/main
 Content-Type: Application/json
 
 {
