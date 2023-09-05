@@ -1,0 +1,7 @@
+POST http://localhost:8080/message/send/main
+Content-Type: Application/json
+
+{
+  "messageText": "message",
+  "uuid": "8e215f5d-47be-42a7-a2b1-541e9a708634"
+}
