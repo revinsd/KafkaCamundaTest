@@ -23,9 +23,10 @@ Kafka - UI      | 8090
 
 #### Send message to main topic
 
-```http
+``
   POST /message/send/main
-
+``
+```
   {
     "messageText": "message",
     "uuid": "8e215f5d-47be-42a7-a2b1-541e9a708634"
