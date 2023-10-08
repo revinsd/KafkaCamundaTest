@@ -1,5 +1,6 @@
 package com.example.KafkaCamundaTest.task.processMessage;
 
+import com.example.KafkaCamundaTest.exception.ProcessException;
 import com.example.KafkaCamundaTest.kafka.dto.MessageDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,13 +22,24 @@ public class ValidateMessageEvent extends AbstractProcessMessageActivity {
     public void execute(DelegateExecution delegateExecution) {
         var message = getMessage(delegateExecution);
         var isValid = isValid(message);
+        randomlyThrowException(delegateExecution);
         log.info("Consumed message is {}valid", isValid ? "" : "not ");
         delegateExecution.setVariable(IS_VALID.name(), isValid);
     }
 
     private boolean isValid(MessageDto messageDto) {
-        return nonNull(messageDto.getMessageText())
-                && random.nextBoolean(); //random validation error
+        return nonNull(messageDto.getMessageText());
+    }
+
+    private void randomlyThrowException(DelegateExecution delegateExecution){
+        if(random.nextBoolean()){
+            throw new ProcessException(
+                    getUuid(delegateExecution),
+                    getMessage(delegateExecution),
+                    getRestartCount(delegateExecution),
+                    delegateExecution.getProcessInstanceId()
+            );
+        }
     }
 
 
