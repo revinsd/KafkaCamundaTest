@@ -3,8 +3,9 @@
 
 
 ## Get Started
-Project can be started with the following command:
+To start project run the following commands:
 ```
+mvn install
 docker-compose up -d
 ```
 
